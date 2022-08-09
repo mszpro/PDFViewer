@@ -13,7 +13,7 @@ import PDFKit
 @available(iOS 13.0, *)
 public func getPDFNavigationViewController(pdfFileLocalURL: URL,
                           excludedActivityTypes: [UIActivity.ActivityType] = []) -> UINavigationController? {
-    let storyboard = UIStoryboard(name: "PDFViewer", bundle: Bundle.init(for: PDFViewController.self))
+    let storyboard = UIStoryboard(name: "PDFViewer", bundle: Bundle.module)
     guard let pdfVC = storyboard.instantiateViewController(withIdentifier: "PDFViewController") as? PDFViewController else {
         return nil
     }
