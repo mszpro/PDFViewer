@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="YFL-MD-PZo">
+            <objects>
+                <navigationController toolbarHidden="NO" id="jYx-8S-9ZS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yfl-hC-wma">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SRM-dC-QuT">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PBP-bG-jNa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGi-fl-ku2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-913" y="84"/>
+        </scene>
+        <!--PDF View-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="PDFViewController" id="BYZ-38-t0r" customClass="PDFViewController" customModule="PDFViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbq-aa-6sz" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="633"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5m-OK-yui">
+                                        <rect key="frame" x="184" y="593" width="46" height="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="J5m-OK-yui" firstAttribute="centerX" secondItem="pbq-aa-6sz" secondAttribute="centerX" id="P03-Fi-Lke"/>
+                                    <constraint firstAttribute="bottom" secondItem="J5m-OK-yui" secondAttribute="bottom" constant="10" id="hy7-Oo-MVM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcJ-kd-6rn" customClass="PDFThumbnailView">
+                                <rect key="frame" x="0.0" y="721" width="414" height="155"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="TBQ-Tc-fxi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XcJ-kd-6rn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8YE-NJ-Izw"/>
+                            <constraint firstAttribute="bottom" secondItem="XcJ-kd-6rn" secondAttribute="bottom" constant="20" symbolic="YES" id="H1F-l7-rdg"/>
+                            <constraint firstItem="pbq-aa-6sz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XpF-0z-FIL"/>
+                            <constraint firstItem="XcJ-kd-6rn" firstAttribute="top" secondItem="pbq-aa-6sz" secondAttribute="bottom" id="dqJ-4a-4nZ"/>
+                            <constraint firstItem="pbq-aa-6sz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hu5-lr-xsn"/>
+                            <constraint firstItem="XcJ-kd-6rn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="nWm-0e-LBj"/>
+                            <constraint firstItem="pbq-aa-6sz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wqT-st-ojj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PDF View" id="fMw-rV-XRP">
+                        <barButtonItem key="leftBarButtonItem" image="xmark" catalog="system" id="VGg-AE-OJx">
+                            <connections>
+                                <action selector="actionClose" destination="BYZ-38-t0r" id="62J-lw-Pkv"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="square.and.arrow.up.fill" catalog="system" id="xJX-kj-Zgf">
+                                <connections>
+                                    <action selector="actionShare" destination="BYZ-38-t0r" id="kL6-6c-kLJ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="printer.filled.and.paper" catalog="system" id="QlB-kJ-6aH">
+                                <connections>
+                                    <action selector="actionPrint" destination="BYZ-38-t0r" id="2vj-Uw-xEs"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bottomButton" destination="J5m-OK-yui" id="MtG-Xi-WiP"/>
+                        <outlet property="pdfThumbnailView" destination="XcJ-kd-6rn" id="PYL-sc-X8g"/>
+                        <outlet property="pdfView" destination="pbq-aa-6sz" id="8qL-K1-sQv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="printer.filled.and.paper" catalog="system" width="128" height="111"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
