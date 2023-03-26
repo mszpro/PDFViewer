@@ -95,8 +95,6 @@
                         <outlet property="bottomButton" destination="J5m-OK-yui" id="MtG-Xi-WiP"/>
                         <outlet property="pdfThumbnailView" destination="XcJ-kd-6rn" id="PYL-sc-X8g"/>
                         <outlet property="pdfView" destination="pbq-aa-6sz" id="8qL-K1-sQv"/>
-                        <outlet property="printButton" destination="QlB-kJ-6aH" id="DBz-8d-fve"/>
-                        <outlet property="shareButton" destination="xJX-kj-Zgf" id="ne9-Og-HkM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
