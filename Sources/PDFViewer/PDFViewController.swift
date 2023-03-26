@@ -94,6 +94,10 @@ public class PDFViewController: UIViewController {
         }
         let shareVC = UIActivityViewController(activityItems: [url], applicationActivities: [])
         shareVC.excludedActivityTypes = self.excludedActivityTypes
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            shareVC.popoverPresentationController?.sourceView = self.view
+            shareVC.popoverPresentationController?.sourceRect = CGRect(x:self.view.frame.size.width/2, y: self.view.frame.size.height-200, width: 0, height: 0)
+        }
         self.present(shareVC, animated: true)
     }
     
